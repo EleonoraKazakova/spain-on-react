@@ -2,11 +2,16 @@ import React from "react";
 import ReactDOM from 'react-dom';
 import '../styles/styles.scss'
 import Slider from './slider'
+import Menu from './menu'
 
 function App() {
   return (
     <div className='content'>
-      <div className='header'><h1 className='text'>Spain</h1></div>
+      
+      <div className='header'>
+        <Menu />
+        <h1 className='text'>Spain</h1>
+      </div>
       <div className='title'><p className='text'>Cities in Spain</p></div>
       <div className='main'>
         <Slider />
