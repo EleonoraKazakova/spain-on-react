@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import '../styles/styles.scss'
 import Slider from './slider'
 import Menu from './menu'
+import Textarea from './textarea'
 
 function App() {
   return (
@@ -57,6 +58,8 @@ function App() {
           </div>
 
         </div>
+
+        <Textarea/>
       </div>
       <div className='footer'><p>Eleonora Kazakova</p><a href="https://www.linkedin.com/in/eleonora-kazakova-0841b07a/" rel="stylesheet">LinkedIn</a></div>
     </div>
