@@ -4,6 +4,7 @@ import '../styles/styles.scss'
 import Slider from './slider'
 import Menu from './menu'
 import Textarea from './textarea'
+import PhotoBlock from './photoblock'
 
 function App() {
   return (
@@ -13,7 +14,9 @@ function App() {
         <Menu />
         <h1 className='text'>Spain</h1>
       </div>
-      <div className='title'><p className='text'>Cities in Spain</p></div>
+      <div className='title'><p className='text'>Cities in Spain</p>
+      
+      </div>
       <div className='main'>
         <Slider />
         <div className='cities'>
@@ -59,8 +62,12 @@ function App() {
 
         </div>
 
-        <Textarea/>
+        
       </div>
+
+      <div className='textarea'> <Textarea/> </div>
+      <div className='photoblock'> <PhotoBlock/> </div>
+
       <div className='footer'><p>Eleonora Kazakova</p><a href="https://www.linkedin.com/in/eleonora-kazakova-0841b07a/" rel="stylesheet">LinkedIn</a></div>
     </div>
   )

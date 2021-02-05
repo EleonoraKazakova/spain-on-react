@@ -5,11 +5,13 @@ body{
 .content{
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 100px 80px auto 100px;
+  grid-template-rows: 100px 80px auto 300px 300px 100px;
   grid-template-areas: 
   'hd'
   'tt'
   'mn'
+  'tx'
+  'ph'
   'ft';
   min-height: 100vh;;
 }
@@ -29,6 +31,18 @@ body{
 
 .main{
   grid-area: mn;
+  display: grid;
+  align-items: center;
+}
+
+.textarea{
+  grid-area: tx;
+  display: grid;
+  align-items: center;
+}
+
+.photoblock{
+  grid-area: ph;
   display: grid;
   align-items: center;
 }
