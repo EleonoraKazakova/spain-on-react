@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import '../styles/styles.scss'
 
 export default function Menu(){
@@ -29,7 +30,9 @@ export default function Menu(){
         <div className='modal-content'>
         <div className='menu'>Menu</div>
         <div onClick={toggleItemFirst} className='textItem'>Item 1</div>
+        
         {openItemFirst ? <div  className='textSubItem'>
+            <div><Link to='/photoblock'>Photo-Block</Link></div>
             <div>Item 1.1</div>
             <div>Item 1.2</div>
             <div>Item 1.3</div>
@@ -64,3 +67,4 @@ export default function Menu(){
     </div>
   )
 }
+

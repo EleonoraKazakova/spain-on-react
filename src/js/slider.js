@@ -4,6 +4,7 @@ import photoFirst from '../photos/IMG_2502.JPG'
 import photoSecond from '../photos/IMG_2413.JPG'
 import photoThird from '../photos/IMG_2644.JPG'
 
+
 function Slider() {
   
   const photos = [
