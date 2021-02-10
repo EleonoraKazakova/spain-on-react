@@ -1,10 +1,11 @@
 import React from "react";
 import '../styles/styles.scss'
 import Slider from './slider'
+import Textarea from './textarea'
 
 export default function HomePage() {
   return (
-    <>
+    <div className='homepage'>
       <Slider />
       <div className='cities'>
 
@@ -48,6 +49,9 @@ export default function HomePage() {
         </div>
 
       </div>
-    </>
+
+      <div className='textarea'> <Textarea /> </div>
+            
+    </div>
   )
 }

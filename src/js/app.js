@@ -1,7 +1,6 @@
 import React from "react";
 import '../styles/styles.scss'
 import Menu from './menu'
-import Textarea from './textarea'
 import PhotoBlock from './photoblock'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomePage from "./homepage";
@@ -34,9 +33,7 @@ function App() {
 
         </div>
 
-        <div className='textarea'> <Textarea /> </div>
-        <div className='photoblock'> <PhotoBlock /> </div>
-
+                
         <div className='footer'><p>Eleonora Kazakova</p><a href="https://www.linkedin.com/in/eleonora-kazakova-0841b07a/" rel="stylesheet">LinkedIn</a></div>
       </div>
     </Router>
