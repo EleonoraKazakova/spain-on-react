@@ -8,27 +8,22 @@ export default function PhotoBlock() {
   const togglePhoto = () => {
     setAddPhoto(!addPhoto)
   }*/
-  const [printedPhoto, setPrintedPhoto] = useState([])
-
-  const [photo, setPhoto] = useState('')
-  const savePhoto = (event) => {
-    console.log(event.target)
-    setPhoto(event.target.files[0]) //we take a path to the photo    
-    setPrintedPhoto([...printedPhoto, event.target.files[0]])
+  const [printedPhoto, setPrintedPhoto] = useState<File[]>([])
+  
+  const savePhoto = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if(event.target.files){
+      setPrintedPhoto([...printedPhoto, event.target.files[0]])
+    }
   }
-
-  const print = () => {
-    setPrintedPhoto([...printedPhoto, photo])
-  }
-
-  const fileInput = useRef(null)
+ 
+  const fileInput = useRef<HTMLInputElement>(null)
 
   const [currentPhoto, setCurrentPhoto] = useState(0)
 
 
   return (
     <div className='photobox'>
-      <div onClick={() => fileInput.current.click()} className='custom-file-upload'>Upload your photos</div>
+      <div onClick={() => fileInput.current && fileInput.current.click()} className='custom-file-upload'>Upload your photos</div>
 
       <div>
         <input style={{ display: 'none' }}
