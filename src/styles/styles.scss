@@ -5,13 +5,38 @@ body{
 .content{
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 100px 80px auto 100px;
-  grid-template-areas: 
+  grid-template-rows: 50px 100px 80px auto 100px;
+  grid-template-areas:
+  'bl' 
   'hd'
   'tt'
   'mn'
   'ft';
   min-height: 100vh;;
+}
+
+.block{
+  grid-area: bl;
+  display: grid;
+  align-items: center;
+  background-color: rgb(216, 216, 216);
+}
+
+.blockMenu{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
+
+.blockSubmit{
+  //background-color: rgb(211, 3, 100);
+  cursor: pointer;
+  //margin-top: 20px;
+  display: grid;
+  justify-items: center;
+  color: rgb(15, 15, 15);
+  width: 100px;
 }
 
 .header{
@@ -123,7 +148,7 @@ img{
 .submit{
   background-color: rgb(211, 3, 100);
   cursor: pointer;
-  margin-top: 20px;
+  //margin-top: 20px;
   display: grid;
   justify-items: center;
   color: white;
@@ -149,10 +174,11 @@ img{
   height: 100%; /* Full height */
   //overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgb(181, 207, 228); /* Black w/ opacity */
+  background-color: rgb(255, 255, 255); /* Black w/ opacity */
   justify-content: center;
   animation-name: slideIn;
-  animation-duration: 0.5s
+  animation-duration: 0.5s;
+  box-shadow: 10px 0px 15px gray;
 }
 
 /* Modal Content */

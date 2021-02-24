@@ -60,7 +60,7 @@ export default function Menu(){
         </div>: null
       }      
 
-      <div className='submit' onClick={toggleMenu}>
+      <div className='blockSubmit' onClick={toggleMenu}>
         Menu
       </div>
 

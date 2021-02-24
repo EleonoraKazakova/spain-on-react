@@ -1,18 +1,25 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import '../styles/styles.scss'
 import Menu from './menu'
 import PhotoBlock from './photoblock'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomePage from "./homepage";
+import Form from './form'
 
 function App() {
   return (
     <Router>
       <div className='content'>
 
-        <div className='header'>
-          <Menu />
+        <div className='block'>
+          <div className='blockMenu'>
+            <Menu />
+            <div><Link to='/signin'>Sign in</Link></div>
+          </div>
+        </div>
 
+        <div className='header'>
           <h1 className='text'>Spain</h1>
         </div>
         <div className='title'><p className='text'>Cities in Spain</p>
@@ -25,8 +32,12 @@ function App() {
               <PhotoBlock />
             </Route>
 
-            <Route path='/' >
+            <Route path='/' exact={true}>
               <HomePage />
+            </Route>
+
+            <Route path='/signin'>
+              <Form />
             </Route>
 
           </Switch>

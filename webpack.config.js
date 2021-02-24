@@ -8,7 +8,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 //const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
-  entry: './src/js/index.js',
+  entry: './src/js/index.tsx',
   output: {
     libraryTarget: 'var',
     library: 'Client'

@@ -4,10 +4,7 @@ import arrowLeft from "../svg/back.svg";
 import arrowRight from "../svg/next.svg";
 
 export default function PhotoBlock() {
-  /*const [addPhoto, setAddPhoto] = useState(false)
-  const togglePhoto = () => {
-    setAddPhoto(!addPhoto)
-  }*/
+  
   const [printedPhoto, setPrintedPhoto] = useState<File[]>([])
   
   const savePhoto = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -16,7 +13,7 @@ export default function PhotoBlock() {
     }
   }
  
-  const fileInput = useRef<HTMLInputElement>(null)
+  const fileInput = useRef<HTMLInputElement>(null) //useRef - for chenging input
 
   const [currentPhoto, setCurrentPhoto] = useState(0)
 
