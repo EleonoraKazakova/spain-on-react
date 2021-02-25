@@ -6,6 +6,7 @@ import PhotoBlock from './photoblock'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomePage from "./homepage";
 import Form from './form'
+import Textarea from "./textarea";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <div className='block'>
           <div className='blockMenu'>
             <Menu />
-            <div><Link to='/signin'>Sign in</Link></div>
+            <div className='blockSubmit'><Link to='/signin'>Sign in</Link></div>
           </div>
         </div>
 
@@ -30,6 +31,10 @@ function App() {
 
             <Route path='/photoblock' >
               <PhotoBlock />
+            </Route>
+
+            <Route path='/addtext' >
+              <Textarea />
             </Route>
 
             <Route path='/' exact={true}>

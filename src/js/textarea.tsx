@@ -3,10 +3,10 @@ import '../styles/styles.scss'
 
 export default function Textarea() {
 
-  const [addText, setAddText] = useState(false)
+  /*const [addText, setAddText] = useState(false)
   const toggleText = () => {
     setAddText(!addText)
-  }
+  }*/
 
   const [text, setText] = useState('')
 
@@ -20,13 +20,14 @@ export default function Textarea() {
   }
 
   return (
-    <div className='cities'>
-      {addText ? <div>
+    <div className='textareaGrid'>
+      <h3>Add text</h3>
+      <div>
         <textarea value={text} rows={4} cols={50} onChange={saveText}></textarea>
         <div onClick={print}>Enter</div>
         <div> { printedText.map(el=> <p>{el}</p>) } </div>
-      </div> : null}
-      <div onClick={toggleText}>Add</div>
+      </div> 
+      {/*<div onClick={toggleText}><h3>Add text</h3></div>*/}
     </div>
   )
 }
