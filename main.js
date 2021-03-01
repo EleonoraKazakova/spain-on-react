@@ -34755,13 +34755,16 @@ __webpack_require__(/*! ../styles/styles.scss */ "./src/styles/styles.scss");
 var slider_1 = __importDefault(__webpack_require__(/*! ./slider */ "./src/js/slider.tsx"));
 var textarea_1 = __importDefault(__webpack_require__(/*! ./textarea */ "./src/js/textarea.tsx"));
 var flipCard_1 = __importDefault(__webpack_require__(/*! ./flipCard */ "./src/js/flipCard.tsx"));
+var IMG_2068_JPG_1 = __importDefault(__webpack_require__(/*! ../photos/IMG_2068.JPG */ "./src/photos/IMG_2068.JPG"));
+var IMG_2445_JPG_1 = __importDefault(__webpack_require__(/*! ../photos/IMG_2445.JPG */ "./src/photos/IMG_2445.JPG"));
+var IMG_4145_JPG_1 = __importDefault(__webpack_require__(/*! ../photos/IMG_4145.JPG */ "./src/photos/IMG_4145.JPG"));
 function HomePage() {
     return (react_1.default.createElement("div", { className: 'homepage' },
         react_1.default.createElement(slider_1.default, null),
         react_1.default.createElement("div", { className: 'cities' },
-            react_1.default.createElement(flipCard_1.default, { photo: 'src/photos/IMG_2068.JPG', city: 'Barcelona' }),
-            react_1.default.createElement(flipCard_1.default, { photo: 'src/photos/IMG_2445.JPG', city: 'Tarragona' }),
-            react_1.default.createElement(flipCard_1.default, { photo: 'src/photos/IMG_4145.JPG', city: 'Montserrat' })),
+            react_1.default.createElement(flipCard_1.default, { photo: IMG_2068_JPG_1.default, city: 'Barcelona' }),
+            react_1.default.createElement(flipCard_1.default, { photo: IMG_2445_JPG_1.default, city: 'Tarragona' }),
+            react_1.default.createElement(flipCard_1.default, { photo: IMG_4145_JPG_1.default, city: 'Montserrat' })),
         react_1.default.createElement("div", { className: 'textarea' },
             " ",
             react_1.default.createElement(textarea_1.default, null),
@@ -35147,6 +35150,21 @@ function valueEqual(a, b) {
 
 /***/ }),
 
+/***/ "./src/photos/IMG_2068.JPG":
+/*!*********************************!*\
+  !*** ./src/photos/IMG_2068.JPG ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "37beada671f58dd333e7aea68e74b757.JPG");
+
+/***/ }),
+
 /***/ "./src/photos/IMG_2413.JPG":
 /*!*********************************!*\
   !*** ./src/photos/IMG_2413.JPG ***!
@@ -35159,6 +35177,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "2f08a47222d037f6073b6999d0f505c7.JPG");
+
+/***/ }),
+
+/***/ "./src/photos/IMG_2445.JPG":
+/*!*********************************!*\
+  !*** ./src/photos/IMG_2445.JPG ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "b6b4f2663fc5a5bd2c10c2f326eae946.JPG");
 
 /***/ }),
 
@@ -35189,6 +35222,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "15c6db732fbb59b82a5dd121c09f8d93.JPG");
+
+/***/ }),
+
+/***/ "./src/photos/IMG_4145.JPG":
+/*!*********************************!*\
+  !*** ./src/photos/IMG_4145.JPG ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "0757c380b4aaafcb1969d1da8966a1f7.JPG");
 
 /***/ }),
 
