@@ -34589,6 +34589,7 @@ var react_router_dom_2 = __webpack_require__(/*! react-router-dom */ "./node_mod
 var homepage_1 = __importDefault(__webpack_require__(/*! ./homepage */ "./src/js/homepage.tsx"));
 var form_1 = __importDefault(__webpack_require__(/*! ./form */ "./src/js/form.tsx"));
 var textarea_1 = __importDefault(__webpack_require__(/*! ./textarea */ "./src/js/textarea.tsx"));
+var linkedin_png_1 = __importDefault(__webpack_require__(/*! ../photos/linkedin.png */ "./src/photos/linkedin.png"));
 function App() {
     return (react_1.default.createElement(react_router_dom_2.BrowserRouter, null,
         react_1.default.createElement("div", { className: 'content' },
@@ -34598,22 +34599,23 @@ function App() {
                     react_1.default.createElement("div", { className: 'blockSubmit' },
                         react_1.default.createElement(react_router_dom_1.Link, { to: '/spain-on-react/signin' }, "Sign in")))),
             react_1.default.createElement("div", { className: 'header' },
-                react_1.default.createElement("h1", { className: 'text' }, "Spain")),
+                react_1.default.createElement("h3", { className: 'text' }, "work in progress")),
             react_1.default.createElement("div", { className: 'title' },
-                react_1.default.createElement("p", { className: 'text' }, "Cities in Spain")),
+                react_1.default.createElement("h1", { className: 'text' }, "Cities in Spain")),
             react_1.default.createElement("div", { className: 'main' },
                 react_1.default.createElement(react_router_dom_2.Switch, null,
                     react_1.default.createElement(react_router_dom_2.Route, { path: '/spain-on-react/photoblock' },
                         react_1.default.createElement(photoblock_1.default, null)),
                     react_1.default.createElement(react_router_dom_2.Route, { path: '/spain-on-react/addtext' },
                         react_1.default.createElement(textarea_1.default, null)),
-                    react_1.default.createElement(react_router_dom_2.Route, { path: '/spain-on-react/', exact: true },
+                    react_1.default.createElement(react_router_dom_2.Route, { path: ['/spain-on-react/', '/'], exact: true },
                         react_1.default.createElement(homepage_1.default, null)),
                     react_1.default.createElement(react_router_dom_2.Route, { path: '/spain-on-react/signin' },
                         react_1.default.createElement(form_1.default, null)))),
             react_1.default.createElement("div", { className: 'footer' },
                 react_1.default.createElement("p", null, "Eleonora Kazakova"),
-                react_1.default.createElement("a", { href: "https://www.linkedin.com/in/eleonora-kazakova-0841b07a/", rel: "stylesheet" }, "LinkedIn")))));
+                react_1.default.createElement("a", { href: "https://www.linkedin.com/in/eleonora-kazakova-0841b07a/", rel: "stylesheet" },
+                    react_1.default.createElement("img", { src: linkedin_png_1.default, className: 'linkedin' }))))));
 }
 exports.default = App;
 
@@ -34714,16 +34716,17 @@ function Form() {
     return (react_1.default.createElement("div", null,
         react_1.default.createElement("div", null,
             " ",
-            react_1.default.createElement("p", { className: 'text' }, " Registration form"),
+            react_1.default.createElement("h3", { className: 'text' }, " Registration form"),
             " "),
-        react_1.default.createElement("p", { className: "text" }, "Input Username"),
-        react_1.default.createElement("input", { type: "text", name: "username", placeholder: "Input Username here", value: username, onChange: handleUser }),
-        react_1.default.createElement("p", { className: "text" }, "Input email"),
-        react_1.default.createElement("input", { type: "text", name: "username", placeholder: "Input email here", value: email, onChange: handleEmail }),
-        react_1.default.createElement("p", { className: "text" }, "Input password"),
-        react_1.default.createElement("input", { type: "password", name: "password", placeholder: "Input password here", value: password, onChange: handlePassword }),
-        react_1.default.createElement("div", { className: "submit" },
-            react_1.default.createElement("div", { className: "text", onClick: register }, "Create account")),
+        react_1.default.createElement("div", { className: 'text' },
+            react_1.default.createElement("p", { className: "text" }, "Input Username"),
+            react_1.default.createElement("input", { type: "text", name: "username", placeholder: "Input Username here", value: username, onChange: handleUser }),
+            react_1.default.createElement("p", { className: "text" }, "Input email"),
+            react_1.default.createElement("input", { type: "text", name: "username", placeholder: "Input email here", value: email, onChange: handleEmail }),
+            react_1.default.createElement("p", { className: "text" }, "Input password"),
+            react_1.default.createElement("input", { type: "password", name: "password", placeholder: "Input password here", value: password, onChange: handlePassword }),
+            react_1.default.createElement("div", { className: "submit" },
+                react_1.default.createElement("div", { className: "text", onClick: register }, "Create account"))),
         react_1.default.createElement("div", null, users.map(function (el) { return react_1.default.createElement("div", null,
             " ",
             react_1.default.createElement("p", null, el.username),
@@ -34826,6 +34829,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 __webpack_require__(/*! ../styles/styles.scss */ "./src/styles/styles.scss");
 var menuitem_1 = __importDefault(__webpack_require__(/*! ./menuitem */ "./src/js/menuitem.tsx"));
 function Menu() {
@@ -34840,10 +34844,9 @@ function Menu() {
                 react_1.default.createElement("div", { className: 'menu' }, "Menu"),
                 react_1.default.createElement(menuitem_1.default, { name: 'Item 1', links: { '1.1 Photo-Block': homePage + '/photoblock', '1.2 Add text': homePage + '/addtext' } }),
                 react_1.default.createElement(menuitem_1.default, { name: 'Item 2', links: { '2.1': homePage + '/', '2.2': homePage + '/', '2.3': homePage + '/' } }),
-                react_1.default.createElement(menuitem_1.default, { name: 'Item 3', links: { '3.1': homePage + '/', '3.2': homePage + '/', '3.3': homePage + '/' } }),
-                react_1.default.createElement("div", null,
-                    react_1.default.createElement("a", { href: '/spain-on-react/' }, "Homepage")),
-                react_1.default.createElement("div", { className: 'submit', onClick: toggleMenu }, " Close "))) : null,
+                react_1.default.createElement("div", { className: 'MenuItem-title' },
+                    react_1.default.createElement(react_router_dom_1.Link, { to: '/spain-on-react/' }, "Homepage")),
+                react_1.default.createElement("div", { className: 'submitClose', onClick: toggleMenu }, " Close "))) : null,
         react_1.default.createElement("div", { className: 'blockSubmit', onClick: toggleMenu }, "Menu")));
 }
 exports.default = Menu;
@@ -35233,6 +35236,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "0757c380b4aaafcb1969d1da8966a1f7.JPG");
+
+/***/ }),
+
+/***/ "./src/photos/linkedin.png":
+/*!*********************************!*\
+  !*** ./src/photos/linkedin.png ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "2d635d70436d50b7416b914d9ac4ab4e.png");
 
 /***/ }),
 
