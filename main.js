@@ -34588,6 +34588,7 @@ var photoblock_1 = __importDefault(__webpack_require__(/*! ./photoblock */ "./sr
 var react_router_dom_2 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 var homepage_1 = __importDefault(__webpack_require__(/*! ./homepage */ "./src/js/homepage.tsx"));
 var form_1 = __importDefault(__webpack_require__(/*! ./form */ "./src/js/form.tsx"));
+var textarea_1 = __importDefault(__webpack_require__(/*! ./textarea */ "./src/js/textarea.tsx"));
 function App() {
     return (react_1.default.createElement(react_router_dom_2.BrowserRouter, null,
         react_1.default.createElement("div", { className: 'content' },
@@ -34604,6 +34605,8 @@ function App() {
                 react_1.default.createElement(react_router_dom_2.Switch, null,
                     react_1.default.createElement(react_router_dom_2.Route, { path: '/spain-on-react/photoblock' },
                         react_1.default.createElement(photoblock_1.default, null)),
+                    react_1.default.createElement(react_router_dom_2.Route, { path: '/spain-on-react/addtext' },
+                        react_1.default.createElement(textarea_1.default, null)),
                     react_1.default.createElement(react_router_dom_2.Route, { path: '/spain-on-react/', exact: true },
                         react_1.default.createElement(homepage_1.default, null)),
                     react_1.default.createElement(react_router_dom_2.Route, { path: '/spain-on-react/signin' },
@@ -34750,7 +34753,6 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 __webpack_require__(/*! ../styles/styles.scss */ "./src/styles/styles.scss");
 var slider_1 = __importDefault(__webpack_require__(/*! ./slider */ "./src/js/slider.tsx"));
-var textarea_1 = __importDefault(__webpack_require__(/*! ./textarea */ "./src/js/textarea.tsx"));
 var flipCard_1 = __importDefault(__webpack_require__(/*! ./flipCard */ "./src/js/flipCard.tsx"));
 var IMG_2068_JPG_1 = __importDefault(__webpack_require__(/*! ../photos/IMG_2068.JPG */ "./src/photos/IMG_2068.JPG"));
 var IMG_2445_JPG_1 = __importDefault(__webpack_require__(/*! ../photos/IMG_2445.JPG */ "./src/photos/IMG_2445.JPG"));
@@ -34761,11 +34763,7 @@ function HomePage() {
         react_1.default.createElement("div", { className: 'cities' },
             react_1.default.createElement(flipCard_1.default, { photo: IMG_2068_JPG_1.default, city: 'Barcelona' }),
             react_1.default.createElement(flipCard_1.default, { photo: IMG_2445_JPG_1.default, city: 'Tarragona' }),
-            react_1.default.createElement(flipCard_1.default, { photo: IMG_4145_JPG_1.default, city: 'Montserrat' })),
-        react_1.default.createElement("div", { className: 'textarea' },
-            " ",
-            react_1.default.createElement(textarea_1.default, null),
-            " ")));
+            react_1.default.createElement(flipCard_1.default, { photo: IMG_4145_JPG_1.default, city: 'Montserrat' }))));
 }
 exports.default = HomePage;
 
