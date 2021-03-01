@@ -34846,7 +34846,6 @@ function Menu() {
                 react_1.default.createElement(menuitem_1.default, { name: 'Item 1', links: { '1.1 Photo-Block': homePage + '/photoblock', '1.2 Add text': homePage + '/addtext' } }),
                 react_1.default.createElement(menuitem_1.default, { name: 'Item 2', links: { '2.1': homePage + '/', '2.2': homePage + '/', '2.3': homePage + '/' } }),
                 react_1.default.createElement(menuitem_1.default, { name: 'Item 3', links: { '3.1': homePage + '/', '3.2': homePage + '/', '3.3': homePage + '/' } }),
-                react_1.default.createElement(menuitem_1.default, { name: 'Homepage', links: { 'Homepage': homePage + '/' } }),
                 react_1.default.createElement("div", null,
                     react_1.default.createElement("a", { href: '/spain-on-react/' }, "Homepage")),
                 react_1.default.createElement("div", { className: 'submit', onClick: toggleMenu }, " Close "))) : null,
