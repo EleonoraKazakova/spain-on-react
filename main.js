@@ -34588,7 +34588,6 @@ var photoblock_1 = __importDefault(__webpack_require__(/*! ./photoblock */ "./sr
 var react_router_dom_2 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 var homepage_1 = __importDefault(__webpack_require__(/*! ./homepage */ "./src/js/homepage.tsx"));
 var form_1 = __importDefault(__webpack_require__(/*! ./form */ "./src/js/form.tsx"));
-var textarea_1 = __importDefault(__webpack_require__(/*! ./textarea */ "./src/js/textarea.tsx"));
 function App() {
     return (react_1.default.createElement(react_router_dom_2.BrowserRouter, null,
         react_1.default.createElement("div", { className: 'content' },
@@ -34605,8 +34604,6 @@ function App() {
                 react_1.default.createElement(react_router_dom_2.Switch, null,
                     react_1.default.createElement(react_router_dom_2.Route, { path: '/spain-on-react/photoblock' },
                         react_1.default.createElement(photoblock_1.default, null)),
-                    react_1.default.createElement(react_router_dom_2.Route, { path: '/spain-on-react/addtext' },
-                        react_1.default.createElement(textarea_1.default, null)),
                     react_1.default.createElement(react_router_dom_2.Route, { path: '/spain-on-react/', exact: true },
                         react_1.default.createElement(homepage_1.default, null)),
                     react_1.default.createElement(react_router_dom_2.Route, { path: '/spain-on-react/signin' },
