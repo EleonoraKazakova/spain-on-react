@@ -34835,13 +34835,15 @@ function Menu() {
     var toggleMenu = function () {
         setOpenMenu(!openMenu);
     };
+    var homePage = '/spain-on-react';
     return (react_1.default.createElement("div", null,
         openMenu ? react_1.default.createElement("div", { className: 'modal' },
             react_1.default.createElement("div", { className: 'modal-content' },
                 react_1.default.createElement("div", { className: 'menu' }, "Menu"),
-                react_1.default.createElement(menuitem_1.default, { name: 'Item 1', links: { '1.1 Photo-Block': '/photoblock', '1.2 Add text': '/addtext' } }),
-                react_1.default.createElement(menuitem_1.default, { name: 'Item 2', links: { '2.1': '/', '2.2': '/', '2.3': '/' } }),
-                react_1.default.createElement(menuitem_1.default, { name: 'Item 3', links: { '3.1': '/', '3.2': '/', '3.3': '/' } }),
+                react_1.default.createElement(menuitem_1.default, { name: 'Item 1', links: { '1.1 Photo-Block': homePage + '/photoblock', '1.2 Add text': homePage + '/addtext' } }),
+                react_1.default.createElement(menuitem_1.default, { name: 'Item 2', links: { '2.1': homePage + '/', '2.2': homePage + '/', '2.3': homePage + '/' } }),
+                react_1.default.createElement(menuitem_1.default, { name: 'Item 3', links: { '3.1': homePage + '/', '3.2': homePage + '/', '3.3': homePage + '/' } }),
+                react_1.default.createElement(menuitem_1.default, { name: 'Homepage', links: { 'Homepage': homePage + '/' } }),
                 react_1.default.createElement("div", { className: 'submit', onClick: toggleMenu }, " Close "))) : null,
         react_1.default.createElement("div", { className: 'blockSubmit', onClick: toggleMenu }, "Menu")));
 }
