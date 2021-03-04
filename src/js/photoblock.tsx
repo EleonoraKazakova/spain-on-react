@@ -22,7 +22,7 @@ export default function PhotoBlock() {
     <div className='photobox'>
       <div onClick={() => fileInput.current && fileInput.current.click()} className='custom-file-upload'>Upload your photos</div>
 
-      <div>
+      <div className='photoblockContent'>
         <input style={{ display: 'none' }}
           ref={fileInput}
           className='custom-file-upload'
@@ -32,10 +32,10 @@ export default function PhotoBlock() {
 
 
 
-        <div > {printedPhoto.length <= 1 ? printedPhoto.map(el => <img src={URL.createObjectURL(el)} />)
-          : <><img
+        <div > {printedPhoto.length <= 1 ? printedPhoto.map(el => <img src={URL.createObjectURL(el)} className='photo' />)
+          : <div className='photoblockContent'><img  
             src={arrowLeft}
-            className="arrow"
+            className='arrow'
             alt=""
             onClick={() =>
               setCurrentPhoto(
@@ -60,7 +60,7 @@ export default function PhotoBlock() {
                 )
               }
             />
-          </>
+          </div>
 
 
         }  </div>

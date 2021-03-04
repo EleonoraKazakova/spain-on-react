@@ -1,17 +1,26 @@
 @use 'flipcard';
 @use 'menu';
+@use 'slider';
+@use 'photoblock';
+@use 'form';
+
 
 body{
   margin: 0;
+  background-color: rgb(255, 255, 255);
+}
+
+p{
+  margin: 0;
+  padding: 0;
 }
 
 .content{
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 50px 100px 80px auto 100px;
+  grid-template-rows: 30px 50px auto 100px;
   grid-template-areas:
   'bl' 
-  'hd'
   'tt'
   'mn'
   'ft';
@@ -22,7 +31,7 @@ body{
   grid-area: bl;
   display: grid;
   align-items: center;
-  background-color: rgb(216, 216, 216);
+  background-color: rgb(255, 254, 254);
 }
 
 .blockMenu{
@@ -32,14 +41,14 @@ body{
 }
 
 .blockSubmit{
-  //background-color: rgb(211, 3, 100);
   cursor: pointer;
-  //margin-top: 20px;
   display: grid;
   justify-items: center;
   color: rgb(15, 15, 15);
-  width: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
+
 a:link {
   text-decoration: none;
 }
@@ -56,7 +65,7 @@ a:visited {
 
 .title{
   grid-area: tt;
-  background-color: gold;
+  background-color: rgb(250, 232, 184);
   display: grid;
   align-items: center;
 }
@@ -64,7 +73,6 @@ a:visited {
 .main{
   grid-area: mn;
   display: grid;
-  //align-items: center;
   justify-self: center;
 }
 
@@ -82,25 +90,14 @@ a:visited {
   align-items: center;
 }
 
-
-
-.photoblock{
-  grid-area: ph;
-  display: grid;
-  align-items: center;
-}
-
 .footer{
   grid-area: ft;
-  background-color: gold;
+  background-color: rgb(248, 238, 180);
+  padding: 20px;
 }
 
-.cities{
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 40px;
+.linkedin{
+  width: 30px;
 }
 
 .homepage{
@@ -108,66 +105,4 @@ a:visited {
   flex-direction: column;
   gap: 20px;
   justify-content: center;
-  margin-top: 40px;
-}
-
-.text{
-  display: grid;
-  justify-items: center;
-}
-
-img{
-  max-width: 400px;
-}
-
-.slider{
-  max-width: 600px;
-}
-
-.submit{
-  background-color: rgb(211, 3, 100);
-  cursor: pointer;
-  margin-top: 10px;
-  display: grid;
-  justify-items: center;
-  color: white;
-  width: 150px;
-}
-
-.button{
-  background-color: rgb(181, 207, 228);
-  width: 100px;
-  height: 50px;
-}
-
-.custom-file-upload {
-  border: 1px solid #ccc;
-  display: inline-block;
-  padding: 6px 12px;
-  cursor: pointer;
-  height: 30px;
-  display: flex;
-  width: 500px;
-  height: 20px;
-  justify-content: center;
-}
-
-.photobox{
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-top: 40px;
-}
-
-.photo_hidden {
-  display: none;
-}
-
-.photo{
-  width: 500px;
-}
-
-.arrow {
-  width: 30px;
-  cursor: pointer;
 }

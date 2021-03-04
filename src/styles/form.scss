@@ -1,25 +1,17 @@
-.MenuItem-item{
+.text{
   display: flex;
+  justify-content: center;
   flex-direction: column;
-  color: rgb(0, 0, 0);
-  font-size: 20px;
-  margin: 5px;
 }
 
-.MenuItem-title{
-  color: rgb(0, 0, 0);
-  font-size: 20px;
-  margin-top: 5px;
-}
-
-.submitClose{
+.submit{
   background-color: rgb(109, 109, 108);
   cursor: pointer;
   margin-top: 10px;
   display: grid;
   justify-items: center;
   color: white;
-  width: 100px;
+  width: 150px;
   padding-top: 10px;
   padding-bottom: 10px;
 }

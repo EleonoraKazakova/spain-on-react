@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomePage from "./homepage";
 import Form from './form'
 import Textarea from "./textarea";
+import linkedin from "../photos/linkedin.png"
 
 function App() {
   return (
@@ -16,32 +17,30 @@ function App() {
         <div className='block'>
           <div className='blockMenu'>
             <Menu />
-            <div className='blockSubmit'><Link to='/signin'>Sign in</Link></div>
+            <div className='blockSubmit'><Link to='/spain-on-react/signin'>Sign in</Link></div>
           </div>
         </div>
 
-        <div className='header'>
-          <h1 className='text'>Spain</h1>
-        </div>
-        <div className='title'><p className='text'>Cities in Spain</p>
-
+        
+        <div className='title text'>
+          <p >Cities in Spain  </p> <br/> <p>work in progress</p>
         </div>
         <div className='main'>
           <Switch>
 
-            <Route path='/photoblock' >
+            <Route path='/spain-on-react/photoblock' >
               <PhotoBlock />
             </Route>
 
-            <Route path='/addtext' >
+            <Route path='/spain-on-react/addtext' >
               <Textarea />
             </Route>
 
-            <Route path='/' exact={true}>
+            <Route path={['/spain-on-react/', '/']} exact={true}>
               <HomePage />
             </Route>
 
-            <Route path='/signin'>
+            <Route path='/spain-on-react/signin'>
               <Form />
             </Route>
 
@@ -49,8 +48,14 @@ function App() {
 
         </div>
 
-                
-        <div className='footer'><p>Eleonora Kazakova</p><a href="https://www.linkedin.com/in/eleonora-kazakova-0841b07a/" rel="stylesheet">LinkedIn</a></div>
+
+        <div className='footer'>
+          <p>Eleonora Kazakova</p>
+          <a href="https://www.linkedin.com/in/eleonora-kazakova-0841b07a/" rel="stylesheet">
+            <img src={linkedin} className='linkedin' />
+          </a>
+          
+        </div>
       </div>
     </Router>
   )

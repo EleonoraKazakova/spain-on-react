@@ -43,8 +43,8 @@ export default function Form() {
   return (
     <div>
      
-        <div> <p className='text'> Registration form</p> </div>
-
+        <div> <h3 className='text'> Registration form</h3> </div>
+        <div className='text'>
         <p className="text">
           Input Username
         </p>
@@ -83,7 +83,7 @@ export default function Form() {
             Create account
         </div>
         </div>
-
+        </div>
         <div>{users.map(el => <div> <p>{el.username}</p> <p>{el.email}</p> <p>{el.password}</p> </div>)}</div>
       
 

@@ -1,0 +1,11 @@
+.slider{
+  max-width: 100%;
+}
+
+.citiesSlider{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}

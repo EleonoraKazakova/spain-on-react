@@ -1,0 +1,42 @@
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  height: 30px;
+  display: flex;
+  width: 500px;
+  height: 20px;
+  justify-content: center;
+}
+
+.photoblock{
+  grid-area: ph;
+  display: grid;
+  align-items: center;
+}
+
+.photoblockContent{
+  display: flex;
+  justify-content: center;
+}
+
+.arrow {
+  width: 30px;
+  cursor: pointer;
+}
+
+.photo_hidden {
+  display: none;
+}
+
+.photo{
+  max-width: 200px;
+}
+  
+.photobox{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 40px;
+}

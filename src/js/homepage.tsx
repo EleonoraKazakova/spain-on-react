@@ -3,19 +3,19 @@ import '../styles/styles.scss'
 import Slider from './slider'
 import Textarea from './textarea'
 import FlipCard from './flipCard'
+import barcelona from '../photos/IMG_2068.JPG'
+import tarragona from '../photos/IMG_2445.JPG'
+import montserrat from '../photos/IMG_4145.JPG'
 
 export default function HomePage() {
   return (
     <div className='homepage'>
       <Slider />
       <div className='cities'>
-        <FlipCard photo='src/photos/IMG_2068.JPG' city='Barcelona' />
-        <FlipCard photo='src/photos/IMG_2445.JPG' city='Tarragona' />
-        <FlipCard photo='src/photos/IMG_4145.JPG' city='Montserrat' />
-      </div>
-
-      <div className='textarea'> <Textarea /> </div>
-      
+        <FlipCard photo={barcelona} city='Barcelona' />
+        <FlipCard photo={tarragona} city='Tarragona' />
+        <FlipCard photo={montserrat} city='Montserrat' />
+      </div>      
             
     </div>
   )
