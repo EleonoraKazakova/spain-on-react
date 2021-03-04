@@ -1556,6 +1556,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/styles/form.scss":
+/*!******************************!*\
+  !*** ./src/styles/form.scss ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./src/styles/menu.scss":
 /*!******************************!*\
   !*** ./src/styles/menu.scss ***!
@@ -1573,6 +1586,32 @@ __webpack_require__.r(__webpack_exports__);
 /*!**********************************!*\
   !*** ./src/styles/menuitem.scss ***!
   \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./src/styles/photoblock.scss":
+/*!************************************!*\
+  !*** ./src/styles/photoblock.scss ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./src/styles/slider.scss":
+/*!********************************!*\
+  !*** ./src/styles/slider.scss ***!
+  \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -34598,10 +34637,12 @@ function App() {
                     react_1.default.createElement(menu_1.default, null),
                     react_1.default.createElement("div", { className: 'blockSubmit' },
                         react_1.default.createElement(react_router_dom_1.Link, { to: '/spain-on-react/signin' }, "Sign in")))),
-            react_1.default.createElement("div", { className: 'header' },
-                react_1.default.createElement("h3", { className: 'text' }, "work in progress")),
-            react_1.default.createElement("div", { className: 'title' },
-                react_1.default.createElement("h1", { className: 'text' }, "Cities in Spain")),
+            react_1.default.createElement("div", { className: 'title text' },
+                react_1.default.createElement("p", null, "Cities in Spain  "),
+                " ",
+                react_1.default.createElement("br", null),
+                " ",
+                react_1.default.createElement("p", null, "work in progress")),
             react_1.default.createElement("div", { className: 'main' },
                 react_1.default.createElement(react_router_dom_2.Switch, null,
                     react_1.default.createElement(react_router_dom_2.Route, { path: '/spain-on-react/photoblock' },
@@ -34640,10 +34681,10 @@ function FlipCard(props) {
     return (react_1.default.createElement("div", { className: 'flip-card' },
         react_1.default.createElement("div", { className: 'flip-card-inner' },
             react_1.default.createElement("div", { className: 'flip-card-front' },
-                react_1.default.createElement("img", { src: props.photo, alt: props.city }),
+                react_1.default.createElement("img", { className: 'img', src: props.photo, alt: props.city }),
                 react_1.default.createElement("p", null, props.city)),
             react_1.default.createElement("div", { className: "flip-card-back" },
-                react_1.default.createElement("img", { src: props.photo, alt: props.city }),
+                react_1.default.createElement("img", { className: 'img', src: props.photo, alt: props.city }),
                 react_1.default.createElement("p", null, props.city)))));
 }
 exports.default = FlipCard;
@@ -34791,6 +34832,9 @@ var app_1 = __importDefault(__webpack_require__(/*! ./app */ "./src/js/app.tsx")
 __webpack_require__(/*! ../styles/styles.scss */ "./src/styles/styles.scss");
 __webpack_require__(/*! ../styles/flipcard.scss */ "./src/styles/flipcard.scss");
 __webpack_require__(/*! ../styles/menu.scss */ "./src/styles/menu.scss");
+__webpack_require__(/*! ../styles/slider.scss */ "./src/styles/slider.scss");
+__webpack_require__(/*! ../styles/photoblock.scss */ "./src/styles/photoblock.scss");
+__webpack_require__(/*! ../styles/form.scss */ "./src/styles/form.scss");
 react_dom_1.default.render(react_1.default.createElement(react_1.default.StrictMode, null,
     react_1.default.createElement(app_1.default, null)), document.getElementById("app"));
 
@@ -34957,13 +35001,13 @@ function PhotoBlock() {
     var _b = react_1.useState(0), currentPhoto = _b[0], setCurrentPhoto = _b[1];
     return (react_1.default.createElement("div", { className: 'photobox' },
         react_1.default.createElement("div", { onClick: function () { return fileInput.current && fileInput.current.click(); }, className: 'custom-file-upload' }, "Upload your photos"),
-        react_1.default.createElement("div", null,
+        react_1.default.createElement("div", { className: 'photoblockContent' },
             react_1.default.createElement("input", { style: { display: 'none' }, ref: fileInput, className: 'custom-file-upload', name: 'button', type: "file" /*name="file"*/, onChange: savePhoto, accept: "image/png, image/jpeg" }),
             react_1.default.createElement("div", null,
                 " ",
-                printedPhoto.length <= 1 ? printedPhoto.map(function (el) { return react_1.default.createElement("img", { src: URL.createObjectURL(el) }); })
-                    : react_1.default.createElement(react_1.default.Fragment, null,
-                        react_1.default.createElement("img", { src: back_svg_1.default, className: "arrow", alt: "", onClick: function () {
+                printedPhoto.length <= 1 ? printedPhoto.map(function (el) { return react_1.default.createElement("img", { src: URL.createObjectURL(el), className: 'photo' }); })
+                    : react_1.default.createElement("div", { className: 'photoblockContent' },
+                        react_1.default.createElement("img", { src: back_svg_1.default, className: 'arrow', alt: "", onClick: function () {
                                 return setCurrentPhoto(currentPhoto === 0 ? printedPhoto.length - 1 : currentPhoto - 1);
                             } }),
                         printedPhoto.map(function (el, i) { return (react_1.default.createElement("img", { src: URL.createObjectURL(el), className: currentPhoto === i ? "photo" : "photo_hidden" })); }),
@@ -35010,14 +35054,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 __webpack_require__(/*! ../styles/styles.scss */ "./src/styles/styles.scss");
-var IMG_2502_JPG_1 = __importDefault(__webpack_require__(/*! ../photos/IMG_2502.JPG */ "./src/photos/IMG_2502.JPG"));
-var IMG_2413_JPG_1 = __importDefault(__webpack_require__(/*! ../photos/IMG_2413.JPG */ "./src/photos/IMG_2413.JPG"));
-var IMG_2644_JPG_1 = __importDefault(__webpack_require__(/*! ../photos/IMG_2644.JPG */ "./src/photos/IMG_2644.JPG"));
+var IMG_2502_2_JPG_1 = __importDefault(__webpack_require__(/*! ../photos/IMG_2502_2.JPG */ "./src/photos/IMG_2502_2.JPG"));
+var IMG_2413_2_JPG_1 = __importDefault(__webpack_require__(/*! ../photos/IMG_2413_2.JPG */ "./src/photos/IMG_2413_2.JPG"));
+var IMG_2644_2_JPG_1 = __importDefault(__webpack_require__(/*! ../photos/IMG_2644_2.JPG */ "./src/photos/IMG_2644_2.JPG"));
 function Slider() {
     var photos = [
-        IMG_2502_JPG_1.default,
-        IMG_2413_JPG_1.default,
-        IMG_2644_JPG_1.default
+        IMG_2502_2_JPG_1.default,
+        IMG_2413_2_JPG_1.default,
+        IMG_2644_2_JPG_1.default
     ];
     var _a = react_1.useState(0), photoIndex = _a[0], setPhotoIndex = _a[1];
     react_1.useEffect(function () {
@@ -35025,7 +35069,7 @@ function Slider() {
             setPhotoIndex(function (prev) { return (prev + 1) % photos.length; });
         }, 1000);
     }, []);
-    return (react_1.default.createElement("div", { className: 'cities' },
+    return (react_1.default.createElement("div", { className: 'citiesSlider' },
         react_1.default.createElement("img", { src: photos[photoIndex], className: 'slider', alt: '' })));
 }
 exports.default = Slider;
@@ -35164,10 +35208,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/photos/IMG_2413.JPG":
-/*!*********************************!*\
-  !*** ./src/photos/IMG_2413.JPG ***!
-  \*********************************/
+/***/ "./src/photos/IMG_2413_2.JPG":
+/*!***********************************!*\
+  !*** ./src/photos/IMG_2413_2.JPG ***!
+  \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -35175,7 +35219,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "2f08a47222d037f6073b6999d0f505c7.JPG");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "7a8e20b32b9774017f00f81dbd4a69ee.JPG");
 
 /***/ }),
 
@@ -35194,10 +35238,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/photos/IMG_2502.JPG":
-/*!*********************************!*\
-  !*** ./src/photos/IMG_2502.JPG ***!
-  \*********************************/
+/***/ "./src/photos/IMG_2502_2.JPG":
+/*!***********************************!*\
+  !*** ./src/photos/IMG_2502_2.JPG ***!
+  \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -35205,14 +35249,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "489efe04909143a2e4b8641e0472fbdb.JPG");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "1806a80757d80d555d5439339b330aec.JPG");
 
 /***/ }),
 
-/***/ "./src/photos/IMG_2644.JPG":
-/*!*********************************!*\
-  !*** ./src/photos/IMG_2644.JPG ***!
-  \*********************************/
+/***/ "./src/photos/IMG_2644_2.JPG":
+/*!***********************************!*\
+  !*** ./src/photos/IMG_2644_2.JPG ***!
+  \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -35220,7 +35264,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "15c6db732fbb59b82a5dd121c09f8d93.JPG");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "49c9280aa1cb8136756aa9073e33ac64.JPG");
 
 /***/ }),
 
