@@ -1,16 +1,3 @@
-@use 'flipcard';
-@use 'menu';
-@use 'slider';
-@use 'photoblock';
-@use 'form';
-body {
-  margin: 0;
-  background-color: white; }
-
-p {
-  margin: 0;
-  padding: 0; }
-
 .content {
   display: grid;
   grid-template-columns: 100%;
@@ -29,6 +16,12 @@ p {
   flex-direction: row;
   justify-content: space-between; }
 
+.blockLog {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 15px; }
+
 .blockSubmit {
   cursor: pointer;
   display: grid;
@@ -36,12 +29,6 @@ p {
   color: #0f0f0f;
   padding-left: 20px;
   padding-right: 20px; }
-
-a:link {
-  text-decoration: none; }
-
-a:visited {
-  color: black; }
 
 .header {
   grid-area: hd;
@@ -59,18 +46,6 @@ a:visited {
   display: grid;
   justify-self: center; }
 
-.textarea {
-  grid-area: tx;
-  display: grid;
-  align-items: center; }
-
-.textareaGrid {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-top: 40px;
-  align-items: center; }
-
 .footer {
   grid-area: ft;
   background-color: #f8eeb4;
@@ -84,6 +59,20 @@ a:visited {
   flex-direction: column;
   gap: 20px;
   justify-content: center; }
+
+body {
+  margin: 0;
+  background-color: white; }
+
+p {
+  margin: 0;
+  padding: 0; }
+
+a:link {
+  text-decoration: none; }
+
+a:visited {
+  color: black; }
 
 .MenuItem-item {
   display: flex;
@@ -107,6 +96,18 @@ a:visited {
   width: 100px;
   padding-top: 10px;
   padding-bottom: 10px; }
+
+.textarea {
+  grid-area: tx;
+  display: grid;
+  align-items: center; }
+
+.textareaGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 40px;
+  align-items: center; }
 
 .flip-card {
   height: 320px;

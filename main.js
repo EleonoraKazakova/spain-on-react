@@ -1543,6 +1543,19 @@ var index = react__WEBPACK_IMPORTED_MODULE_0__.createContext || createReactConte
 
 /***/ }),
 
+/***/ "./src/styles/app.scss":
+/*!*****************************!*\
+  !*** ./src/styles/app.scss ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./src/styles/flipcard.scss":
 /*!**********************************!*\
   !*** ./src/styles/flipcard.scss ***!
@@ -1625,6 +1638,19 @@ __webpack_require__.r(__webpack_exports__);
 /*!********************************!*\
   !*** ./src/styles/styles.scss ***!
   \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./src/styles/textarea.scss":
+/*!**********************************!*\
+  !*** ./src/styles/textarea.scss ***!
+  \**********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -34615,30 +34641,74 @@ function warning(condition, message) {
 
 "use strict";
 
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __spreadArrays = (this && this.__spreadArrays) || function () {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-__webpack_require__(/*! ../styles/styles.scss */ "./src/styles/styles.scss");
+__webpack_require__(/*! ../styles/app.scss */ "./src/styles/app.scss");
 var menu_1 = __importDefault(__webpack_require__(/*! ./menu */ "./src/js/menu.tsx"));
 var photoblock_1 = __importDefault(__webpack_require__(/*! ./photoblock */ "./src/js/photoblock.tsx"));
 var react_router_dom_2 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 var homepage_1 = __importDefault(__webpack_require__(/*! ./homepage */ "./src/js/homepage.tsx"));
-var form_1 = __importDefault(__webpack_require__(/*! ./form */ "./src/js/form.tsx"));
+var registrationForm_1 = __importDefault(__webpack_require__(/*! ./registrationForm */ "./src/js/registrationForm.tsx"));
+var logInForm_1 = __importDefault(__webpack_require__(/*! ./logInForm */ "./src/js/logInForm.tsx"));
 var textarea_1 = __importDefault(__webpack_require__(/*! ./textarea */ "./src/js/textarea.tsx"));
 var linkedin_png_1 = __importDefault(__webpack_require__(/*! ../photos/linkedin.png */ "./src/photos/linkedin.png"));
 function App() {
+    var unRegistredUser = { userName: '', registered: false, email: '', password: '' };
+    var _a = react_1.useState(unRegistredUser), user = _a[0], setUser = _a[1]; //currentUser
+    var history = react_router_dom_1.useHistory();
+    var _b = react_1.useState([]), registeredUsers = _b[0], setRegisteredUsers = _b[1];
+    var registerUser = function (newUser) {
+        setUser(newUser);
+        setRegisteredUsers(__spreadArrays(registeredUsers, [newUser]));
+    };
+    var logOut = function () {
+        setUser(unRegistredUser);
+        history.push('/spain-on-react/');
+    };
     return (react_1.default.createElement(react_router_dom_2.BrowserRouter, null,
         react_1.default.createElement("div", { className: 'content' },
             react_1.default.createElement("div", { className: 'block' },
                 react_1.default.createElement("div", { className: 'blockMenu' },
                     react_1.default.createElement(menu_1.default, null),
-                    react_1.default.createElement("div", { className: 'blockSubmit' },
-                        react_1.default.createElement(react_router_dom_1.Link, { to: '/spain-on-react/signin' }, "Sign in")))),
+                    react_1.default.createElement("div", { className: 'blockSubmit' }, user.registered
+                        ? react_1.default.createElement("div", { className: 'blockLog' },
+                            react_1.default.createElement("div", { onClick: logOut }, " Log out "),
+                            user.userName)
+                        : react_1.default.createElement("div", { className: 'blockLog' },
+                            react_1.default.createElement(react_router_dom_1.Link, { to: '/spain-on-react/login' }, " Log in "),
+                            react_1.default.createElement(react_router_dom_1.Link, { to: '/spain-on-react/signin' }, " Sign in "))))),
             react_1.default.createElement("div", { className: 'title text' },
-                react_1.default.createElement("p", null, "Cities in Spain  "),
+                react_1.default.createElement("p", null, " Cities in Spain "),
                 " ",
                 react_1.default.createElement("br", null),
                 " ",
@@ -34651,8 +34721,11 @@ function App() {
                         react_1.default.createElement(textarea_1.default, null)),
                     react_1.default.createElement(react_router_dom_2.Route, { path: ['/spain-on-react/', '/'], exact: true },
                         react_1.default.createElement(homepage_1.default, null)),
+                    react_1.default.createElement(react_router_dom_2.Route, { path: '/spain-on-react/login' },
+                        react_1.default.createElement(logInForm_1.default, { registeredUsers: registeredUsers, setUser: setUser })),
                     react_1.default.createElement(react_router_dom_2.Route, { path: '/spain-on-react/signin' },
-                        react_1.default.createElement(form_1.default, null)))),
+                        react_1.default.createElement(registrationForm_1.default, { registerUser: registerUser }),
+                        " "))),
             react_1.default.createElement("div", { className: 'footer' },
                 react_1.default.createElement("p", null, "Eleonora Kazakova"),
                 react_1.default.createElement("a", { href: "https://www.linkedin.com/in/eleonora-kazakova-0841b07a/", rel: "stylesheet" },
@@ -34688,96 +34761,6 @@ function FlipCard(props) {
                 react_1.default.createElement("p", null, props.city)))));
 }
 exports.default = FlipCard;
-
-
-/***/ }),
-
-/***/ "./src/js/form.tsx":
-/*!*************************!*\
-  !*** ./src/js/form.tsx ***!
-  \*************************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-"use strict";
-
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
-var __spreadArrays = (this && this.__spreadArrays) || function () {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-__webpack_require__(/*! ../styles/styles.scss */ "./src/styles/styles.scss");
-function Form() {
-    var _a = react_1.useState(''), username = _a[0], setUsername = _a[1];
-    var _b = react_1.useState(''), email = _b[0], setEmail = _b[1];
-    var _c = react_1.useState(''), password = _c[0], setPassword = _c[1];
-    var _d = react_1.useState(false), openSignIn = _d[0], setOpenSignIn = _d[1];
-    var toggleSignIn = function () {
-        setOpenSignIn(!openSignIn);
-    };
-    var handleUser = function (event) {
-        setUsername(event.target.value);
-    };
-    var handleEmail = function (_a) {
-        var target = _a.target;
-        setEmail(target.value);
-    };
-    var handlePassword = function (_a) {
-        var target = _a.target;
-        setPassword(target.value);
-    };
-    var _e = react_1.useState([]), users = _e[0], setUsers = _e[1];
-    var register = function () {
-        setUsers(__spreadArrays(users, [{ username: username, email: email, password: password }]));
-    };
-    /*const [openModal, setOpenModal] = useState(false)
-    const toggleModal = () => setOpenModal(!openModal) */
-    return (react_1.default.createElement("div", null,
-        react_1.default.createElement("div", null,
-            " ",
-            react_1.default.createElement("h3", { className: 'text' }, " Registration form"),
-            " "),
-        react_1.default.createElement("div", { className: 'text' },
-            react_1.default.createElement("p", { className: "text" }, "Input Username"),
-            react_1.default.createElement("input", { type: "text", name: "username", placeholder: "Input Username here", value: username, onChange: handleUser }),
-            react_1.default.createElement("p", { className: "text" }, "Input email"),
-            react_1.default.createElement("input", { type: "text", name: "username", placeholder: "Input email here", value: email, onChange: handleEmail }),
-            react_1.default.createElement("p", { className: "text" }, "Input password"),
-            react_1.default.createElement("input", { type: "password", name: "password", placeholder: "Input password here", value: password, onChange: handlePassword }),
-            react_1.default.createElement("div", { className: "submit" },
-                react_1.default.createElement("div", { className: "text", onClick: register }, "Create account"))),
-        react_1.default.createElement("div", null, users.map(function (el) { return react_1.default.createElement("div", null,
-            " ",
-            react_1.default.createElement("p", null, el.username),
-            " ",
-            react_1.default.createElement("p", null, el.email),
-            " ",
-            react_1.default.createElement("p", null, el.password),
-            " "); }))));
-}
-exports.default = Form;
 
 
 /***/ }),
@@ -34837,6 +34820,79 @@ __webpack_require__(/*! ../styles/photoblock.scss */ "./src/styles/photoblock.sc
 __webpack_require__(/*! ../styles/form.scss */ "./src/styles/form.scss");
 react_dom_1.default.render(react_1.default.createElement(react_1.default.StrictMode, null,
     react_1.default.createElement(app_1.default, null)), document.getElementById("app"));
+
+
+/***/ }),
+
+/***/ "./src/js/logInForm.tsx":
+/*!******************************!*\
+  !*** ./src/js/logInForm.tsx ***!
+  \******************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+__webpack_require__(/*! ../styles/styles.scss */ "./src/styles/styles.scss");
+function LogInForm(props) {
+    var history = react_router_dom_1.useHistory();
+    var _a = react_1.useState(''), email = _a[0], setEmail = _a[1];
+    var _b = react_1.useState(''), password = _b[0], setPassword = _b[1];
+    var _c = react_1.useState(''), message = _c[0], setMessage = _c[1];
+    var handleEmail = function (_a) {
+        var target = _a.target;
+        setEmail(target.value);
+    };
+    var handlePassword = function (_a) {
+        var target = _a.target;
+        setPassword(target.value);
+    };
+    var login = function () {
+        var registeredUser = props.registeredUsers.find(function (user) { return user.email === email && user.password === password; });
+        if (registeredUser) {
+            props.setUser(registeredUser);
+            history.push('/spain-on-react/');
+        }
+        else {
+            setMessage('You need to register');
+        }
+    };
+    return (react_1.default.createElement("div", null,
+        react_1.default.createElement("div", null,
+            " ",
+            react_1.default.createElement("h3", { className: 'text' }, " Log in form"),
+            " "),
+        react_1.default.createElement("div", { className: 'text' },
+            react_1.default.createElement("p", { className: "text" }, "Input email"),
+            react_1.default.createElement("input", { type: "text", name: "email", placeholder: "Input email here", value: email, onChange: handleEmail }),
+            react_1.default.createElement("p", { className: "text" }, "Input password"),
+            react_1.default.createElement("input", { type: "password", name: "password", placeholder: "Input password here", value: password, onChange: handlePassword }),
+            react_1.default.createElement("div", { className: "submit" },
+                react_1.default.createElement("div", { className: "text", onClick: login }, "Enter"),
+                react_1.default.createElement("div", null, message)))));
+}
+exports.default = LogInForm;
 
 
 /***/ }),
@@ -35021,6 +35077,77 @@ exports.default = PhotoBlock;
 
 /***/ }),
 
+/***/ "./src/js/registrationForm.tsx":
+/*!*************************************!*\
+  !*** ./src/js/registrationForm.tsx ***!
+  \*************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+__webpack_require__(/*! ../styles/styles.scss */ "./src/styles/styles.scss");
+function RegistrationForm(props) {
+    var history = react_router_dom_1.useHistory();
+    var _a = react_1.useState(''), username = _a[0], setUsername = _a[1];
+    var _b = react_1.useState(''), email = _b[0], setEmail = _b[1];
+    var _c = react_1.useState(''), password = _c[0], setPassword = _c[1];
+    var handleUser = function (event) {
+        setUsername(event.target.value);
+    };
+    var handleEmail = function (_a) {
+        var target = _a.target;
+        setEmail(target.value);
+    };
+    var handlePassword = function (_a) {
+        var target = _a.target;
+        setPassword(target.value);
+    };
+    var register = function () {
+        props.registerUser({ userName: username, email: email, password: password, registered: true });
+        history.push('/spain-on-react/');
+    };
+    return (react_1.default.createElement("div", null,
+        react_1.default.createElement("div", null,
+            " ",
+            react_1.default.createElement("h3", { className: 'text' }, " Registration form"),
+            " "),
+        react_1.default.createElement("div", { className: 'text' },
+            react_1.default.createElement("p", { className: "text" }, "Input Username"),
+            react_1.default.createElement("input", { type: "text", name: "username", placeholder: "Input Username here", value: username, onChange: handleUser }),
+            react_1.default.createElement("p", { className: "text" }, "Input email"),
+            react_1.default.createElement("input", { type: "text", name: "email", placeholder: "Input email here", value: email, onChange: handleEmail }),
+            react_1.default.createElement("p", { className: "text" }, "Input password"),
+            react_1.default.createElement("input", { type: "password", name: "password", placeholder: "Input password here", value: password, onChange: handlePassword }),
+            react_1.default.createElement("div", { className: "submit" },
+                react_1.default.createElement("div", { className: "text", onClick: register }, "Create account")))));
+}
+exports.default = RegistrationForm;
+
+
+/***/ }),
+
 /***/ "./src/js/slider.tsx":
 /*!***************************!*\
   !*** ./src/js/slider.tsx ***!
@@ -35113,7 +35240,7 @@ var __spreadArrays = (this && this.__spreadArrays) || function () {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-__webpack_require__(/*! ../styles/styles.scss */ "./src/styles/styles.scss");
+__webpack_require__(/*! ../styles/textarea.scss */ "./src/styles/textarea.scss");
 function Textarea() {
     /*const [addText, setAddText] = useState(false)
     const toggleText = () => {
