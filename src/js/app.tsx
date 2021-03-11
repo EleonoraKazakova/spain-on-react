@@ -1,15 +1,33 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import '../styles/styles.scss'
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
+import '../styles/app.scss'
 import Menu from './menu'
 import PhotoBlock from './photoblock'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomePage from "./homepage";
-import Form from './form'
+import RegistrationForm from './registrationForm'
+import LogInForm from './logInForm'
 import Textarea from "./textarea";
 import linkedin from "../photos/linkedin.png"
+import {User} from './types'
+
 
 function App() {
+  const unRegistredUser = {userName: '', registered: false, email: '', password: ''}
+  const [user, setUser] = useState<User>(unRegistredUser) //currentUser
+  const history = useHistory()
+  const [registeredUsers, setRegisteredUsers] = useState<User[]>([])
+
+  const registerUser = (newUser: User) => {
+    setUser(newUser)
+    setRegisteredUsers([...registeredUsers, newUser] )
+  }
+
+  const logOut = () => {
+    setUser(unRegistredUser)
+    history.push('/spain-on-react/')
+  }
+  
   return (
     <Router>
       <div className='content'>
@@ -17,13 +35,25 @@ function App() {
         <div className='block'>
           <div className='blockMenu'>
             <Menu />
-            <div className='blockSubmit'><Link to='/spain-on-react/signin'>Sign in</Link></div>
+            <div className='blockSubmit'>
+              { 
+                user.registered 
+                ? <div className='blockLog'>  
+                    <div onClick={logOut}> Log out </div> 
+                    {user.userName} 
+                  </div> 
+                : <div className='blockLog'> 
+                    <Link to='/spain-on-react/login'> Log in </Link> 
+                    <Link to='/spain-on-react/signin'> Sign in </Link>
+                  </div>
+              }
+            </div>
           </div>
         </div>
 
         
         <div className='title text'>
-          <p >Cities in Spain  </p> <br/> <p>work in progress</p>
+          <p> Cities in Spain </p> <br/> <p>work in progress</p>
         </div>
         <div className='main'>
           <Switch>
@@ -40,14 +70,17 @@ function App() {
               <HomePage />
             </Route>
 
+            <Route path='/spain-on-react/login'>
+              <LogInForm registeredUsers={registeredUsers} setUser={setUser} />
+            </Route>
+
             <Route path='/spain-on-react/signin'>
-              <Form />
+              <RegistrationForm registerUser={registerUser} /> {/*send to Form setUser; registerUser is property of FormProps in Form*/}
             </Route>
 
           </Switch>
 
         </div>
-
 
         <div className='footer'>
           <p>Eleonora Kazakova</p>

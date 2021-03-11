@@ -1,22 +1,18 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import '../styles/styles.scss'
+import { User } from './types'
 
-type User = {
-  username: string,
-  email: string,
-  password: string
+type RegistrationFormProps = {
+  registerUser: (user: User) => void  //void: setUser() return nothing
 }
 
-export default function Form() {
+export default function RegistrationForm(props: RegistrationFormProps) {
+  const history = useHistory()
+
   const [username, setUsername] = useState<string>('')
   const [email, setEmail] = useState<string>('')
   const [password, setPassword] = useState<string>('')
-
-  const [openSignIn, setOpenSignIn] = useState(false)
-  const toggleSignIn = () => {
-    setOpenSignIn(!openSignIn)
-  }
 
   const handleUser = (event: React.ChangeEvent<HTMLInputElement>) => {
     setUsername(event.target.value)
@@ -29,22 +25,16 @@ export default function Form() {
   const handlePassword = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(target.value)
   }
-
-  const [users, setUsers] = useState<User[]>([])
+  
   const register = () => {
-    setUsers([...users, { username, email, password }])
+    props.registerUser({ userName: username, email, password, registered: true })
+    history.push('/spain-on-react/')
   }
-
-
-
-  /*const [openModal, setOpenModal] = useState(false)
-  const toggleModal = () => setOpenModal(!openModal) */
 
   return (
     <div>
-     
-        <div> <h3 className='text'> Registration form</h3> </div>
-        <div className='text'>
+      <div> <h3 className='text'> Registration form</h3> </div>
+      <div className='text'>
         <p className="text">
           Input Username
         </p>
@@ -58,10 +48,10 @@ export default function Form() {
 
         <p className="text">
           Input email
-      </p>
+        </p>
         <input
           type="text"
-          name="username"
+          name="email"
           placeholder="Input email here"
           value={email}
           onChange={handleEmail}
@@ -81,15 +71,9 @@ export default function Form() {
         <div className="submit" >
           <div className="text" onClick={register} >
             Create account
+          </div>
         </div>
-        </div>
-        </div>
-        <div>{users.map(el => <div> <p>{el.username}</p> <p>{el.email}</p> <p>{el.password}</p> </div>)}</div>
-      
-
-      
+      </div>
     </div>
   )
-
-
 }
