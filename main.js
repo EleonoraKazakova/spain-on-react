@@ -34878,16 +34878,16 @@ function LogInForm(props) {
             setMessage('You need to register');
         }
     };
-    return (react_1.default.createElement("div", null,
+    return (react_1.default.createElement("div", { className: 'form' },
         react_1.default.createElement("div", null,
             " ",
-            react_1.default.createElement("h3", { className: 'text' }, " Log in form"),
+            react_1.default.createElement("h3", { className: 'titleForm' }, " Log in form"),
             " "),
         react_1.default.createElement("div", { className: 'text' },
             react_1.default.createElement("p", { className: "text" }, "Input email"),
-            react_1.default.createElement("input", { type: "text", name: "email", placeholder: "Input email here", value: email, onChange: handleEmail }),
+            react_1.default.createElement("input", { type: "text", name: "email", placeholder: "Input email here", value: email, onChange: handleEmail, className: 'inputForm' }),
             react_1.default.createElement("p", { className: "text" }, "Input password"),
-            react_1.default.createElement("input", { type: "password", name: "password", placeholder: "Input password here", value: password, onChange: handlePassword }),
+            react_1.default.createElement("input", { type: "password", name: "password", placeholder: "Input password here", value: password, onChange: handlePassword, className: 'inputForm' }),
             react_1.default.createElement("div", { className: "submit" },
                 react_1.default.createElement("div", { className: "text", onClick: login }, "Enter"),
                 react_1.default.createElement("div", null, message)))));
