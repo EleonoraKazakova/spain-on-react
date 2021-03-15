@@ -53,7 +53,7 @@ function App() {
 
         
         <div className='title text'>
-          <h3>Cities in Spain</h3> <br/> <p>work in progress</p>
+          <h3>Cities in Spain</h3>  <p>work in progress</p>
         </div>
         <div className='main'>
           <Switch>

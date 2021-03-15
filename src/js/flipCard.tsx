@@ -3,7 +3,8 @@ import '../styles/styles.scss'
 
 type FlipCardProps = {
   city: string,
-  photo: string
+  photo: string,
+  photoBack: string
 }
 
 export default function FlipCard(props: FlipCardProps) {
@@ -16,7 +17,7 @@ export default function FlipCard(props: FlipCardProps) {
           <p>{props.city}</p>
         </div>
         <div className="flip-card-back">
-          <img className='img' src={props.photo} alt={props.city} />
+          <img className='img' src={props.photoBack} alt={props.city} />
           <p>{props.city}</p>
         </div>
       </div>
