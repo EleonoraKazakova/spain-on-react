@@ -95,12 +95,15 @@ a:visited {
   background-color: #6d6d6c;
   cursor: pointer;
   margin-top: 10px;
-  display: grid;
-  justify-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
   width: 100px;
   padding-top: 10px;
-  padding-bottom: 10px; }
+  padding-bottom: 10px;
+  border-radius: 4px;
+  height: 10px; }
 
 .textarea {
   grid-area: tx;

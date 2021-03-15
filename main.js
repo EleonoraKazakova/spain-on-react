@@ -34755,7 +34755,7 @@ function FlipCard(props) {
                 react_1.default.createElement("img", { className: 'img', src: props.photo, alt: props.city }),
                 react_1.default.createElement("p", null, props.city)),
             react_1.default.createElement("div", { className: "flip-card-back" },
-                react_1.default.createElement("img", { className: 'img', src: props.photo, alt: props.city }),
+                react_1.default.createElement("img", { className: 'img', src: props.photoBack, alt: props.city }),
                 react_1.default.createElement("p", null, props.city)))));
 }
 exports.default = FlipCard;
@@ -34782,13 +34782,16 @@ var flipCard_1 = __importDefault(__webpack_require__(/*! ./flipCard */ "./src/js
 var IMG_2068_JPG_1 = __importDefault(__webpack_require__(/*! ../photos/IMG_2068.JPG */ "./src/photos/IMG_2068.JPG"));
 var IMG_2445_JPG_1 = __importDefault(__webpack_require__(/*! ../photos/IMG_2445.JPG */ "./src/photos/IMG_2445.JPG"));
 var IMG_4145_JPG_1 = __importDefault(__webpack_require__(/*! ../photos/IMG_4145.JPG */ "./src/photos/IMG_4145.JPG"));
+var IMG_2242_JPG_1 = __importDefault(__webpack_require__(/*! ../photos/IMG_2242.JPG */ "./src/photos/IMG_2242.JPG"));
+var IMG_2502_JPG_1 = __importDefault(__webpack_require__(/*! ../photos/IMG_2502.JPG */ "./src/photos/IMG_2502.JPG"));
+var IMG_4171_JPG_1 = __importDefault(__webpack_require__(/*! ../photos/IMG_4171.JPG */ "./src/photos/IMG_4171.JPG"));
 function HomePage() {
     return (react_1.default.createElement("div", { className: 'homepage' },
         react_1.default.createElement(slider_1.default, null),
         react_1.default.createElement("div", { className: 'cities' },
-            react_1.default.createElement(flipCard_1.default, { photo: IMG_2068_JPG_1.default, city: 'Barcelona' }),
-            react_1.default.createElement(flipCard_1.default, { photo: IMG_2445_JPG_1.default, city: 'Tarragona' }),
-            react_1.default.createElement(flipCard_1.default, { photo: IMG_4145_JPG_1.default, city: 'Montserrat' }))));
+            react_1.default.createElement(flipCard_1.default, { photo: IMG_2068_JPG_1.default, city: 'Barcelona', photoBack: IMG_2242_JPG_1.default }),
+            react_1.default.createElement(flipCard_1.default, { photo: IMG_2445_JPG_1.default, city: 'Tarragona', photoBack: IMG_2502_JPG_1.default }),
+            react_1.default.createElement(flipCard_1.default, { photo: IMG_4145_JPG_1.default, city: 'Montserrat', photoBack: IMG_4171_JPG_1.default }))));
 }
 exports.default = HomePage;
 
@@ -35333,6 +35336,21 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/photos/IMG_2242.JPG":
+/*!*********************************!*\
+  !*** ./src/photos/IMG_2242.JPG ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "c38895fa95851613f329a4b915ae4194.JPG");
+
+/***/ }),
+
 /***/ "./src/photos/IMG_2413_2.JPG":
 /*!***********************************!*\
   !*** ./src/photos/IMG_2413_2.JPG ***!
@@ -35360,6 +35378,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "b6b4f2663fc5a5bd2c10c2f326eae946.JPG");
+
+/***/ }),
+
+/***/ "./src/photos/IMG_2502.JPG":
+/*!*********************************!*\
+  !*** ./src/photos/IMG_2502.JPG ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "489efe04909143a2e4b8641e0472fbdb.JPG");
 
 /***/ }),
 
@@ -35405,6 +35438,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "0757c380b4aaafcb1969d1da8966a1f7.JPG");
+
+/***/ }),
+
+/***/ "./src/photos/IMG_4171.JPG":
+/*!*********************************!*\
+  !*** ./src/photos/IMG_4171.JPG ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "f973b58a2995759c079cf2588a78068e.JPG");
 
 /***/ }),
 
