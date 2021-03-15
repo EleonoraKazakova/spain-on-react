@@ -34708,7 +34708,7 @@ function App() {
                             react_1.default.createElement(react_router_dom_1.Link, { to: '/spain-on-react/login' }, " Log in "),
                             react_1.default.createElement(react_router_dom_1.Link, { to: '/spain-on-react/signin' }, " Sign in "))))),
             react_1.default.createElement("div", { className: 'title text' },
-                react_1.default.createElement("p", null, " Cities in Spain "),
+                react_1.default.createElement("h3", null, "Cities in Spain"),
                 " ",
                 react_1.default.createElement("br", null),
                 " ",
@@ -35128,18 +35128,18 @@ function RegistrationForm(props) {
         props.registerUser({ userName: username, email: email, password: password, registered: true });
         history.push('/spain-on-react/');
     };
-    return (react_1.default.createElement("div", null,
-        react_1.default.createElement("div", null,
+    return (react_1.default.createElement("div", { className: 'form' },
+        react_1.default.createElement("div", { className: 'titleForm' },
             " ",
-            react_1.default.createElement("h3", { className: 'text' }, " Registration form"),
+            react_1.default.createElement("h3", null, " Registration form"),
             " "),
         react_1.default.createElement("div", { className: 'text' },
             react_1.default.createElement("p", { className: "text" }, "Input Username"),
-            react_1.default.createElement("input", { type: "text", name: "username", placeholder: "Input Username here", value: username, onChange: handleUser }),
+            react_1.default.createElement("input", { type: "text", name: "username", placeholder: "Input Username here", value: username, onChange: handleUser, className: 'inputForm' }),
             react_1.default.createElement("p", { className: "text" }, "Input email"),
-            react_1.default.createElement("input", { type: "text", name: "email", placeholder: "Input email here", value: email, onChange: handleEmail }),
+            react_1.default.createElement("input", { type: "text", name: "email", placeholder: "Input email here", value: email, onChange: handleEmail, className: 'inputForm' }),
             react_1.default.createElement("p", { className: "text" }, "Input password"),
-            react_1.default.createElement("input", { type: "password", name: "password", placeholder: "Input password here", value: password, onChange: handlePassword }),
+            react_1.default.createElement("input", { type: "password", name: "password", placeholder: "Input password here", value: password, onChange: handlePassword, className: 'inputForm' }),
             react_1.default.createElement("div", { className: "submit" },
                 react_1.default.createElement("div", { className: "text", onClick: register }, "Create account")))));
 }
