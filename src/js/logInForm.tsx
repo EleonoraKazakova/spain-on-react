@@ -34,9 +34,9 @@ export default function LogInForm(props: LogInFormProps) {
   }
 
   return (
-    <div>
+    <div className='form'>
 
-      <div> <h3 className='text'> Log in form</h3> </div>
+      <div> <h3 className='titleForm'> Log in form</h3> </div>
       <div className='text'>
 
         <p className="text">
@@ -48,17 +48,19 @@ export default function LogInForm(props: LogInFormProps) {
           placeholder="Input email here"
           value={email}
           onChange={handleEmail}
+          className='inputForm'
         />
 
         <p className="text">
           Input password
-      </p>
+        </p>
         <input
           type="password"
           name="password"
           placeholder="Input password here"
           value={password}
           onChange={handlePassword}
+          className='inputForm'
         />
 
         <div className="submit" >
