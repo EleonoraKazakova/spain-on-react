@@ -54,8 +54,9 @@
 
 .main{
   grid-area: mn;
-  display: grid;
-  justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: self-start;
 }
 
 .footer{

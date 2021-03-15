@@ -32,8 +32,8 @@ export default function RegistrationForm(props: RegistrationFormProps) {
   }
 
   return (
-    <div>
-      <div> <h3 className='text'> Registration form</h3> </div>
+    <div className='form'>
+      <div className='titleForm'> <h3> Registration form</h3> </div>
       <div className='text'>
         <p className="text">
           Input Username
@@ -44,6 +44,7 @@ export default function RegistrationForm(props: RegistrationFormProps) {
           placeholder="Input Username here"
           value={username}
           onChange={handleUser}
+          className='inputForm'
         />
 
         <p className="text">
@@ -55,6 +56,7 @@ export default function RegistrationForm(props: RegistrationFormProps) {
           placeholder="Input email here"
           value={email}
           onChange={handleEmail}
+          className='inputForm'
         />
 
         <p className="text">
@@ -66,6 +68,7 @@ export default function RegistrationForm(props: RegistrationFormProps) {
           placeholder="Input password here"
           value={password}
           onChange={handlePassword}
+          className='inputForm'
         />
 
         <div className="submit" >
