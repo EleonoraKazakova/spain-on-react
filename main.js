@@ -36500,7 +36500,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	(() => {
-/******/ 		__webpack_require__.p = "/";
+/******/ 		__webpack_require__.p = "/spain-on-react/";
 /******/ 	})();
 /******/ 	
 /************************************************************************/
