@@ -35106,14 +35106,30 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.validateUserPassword = exports.validateUserEmail = exports.validateUserName = void 0;
 var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 __webpack_require__(/*! ../styles/styles.scss */ "./src/styles/styles.scss");
+var validateUserName = function (username) {
+    return username.length > 0 ? null : 'You should enter Username';
+};
+exports.validateUserName = validateUserName;
+var validateUserEmail = function (email) {
+    return /\S+@\S+\.\S+/.test(email) ? null : 'You should enter valid email';
+};
+exports.validateUserEmail = validateUserEmail;
+var validateUserPassword = function (password) {
+    return password.length > 5 ? null : 'Your password should have 6 or more symbols';
+};
+exports.validateUserPassword = validateUserPassword;
 function RegistrationForm(props) {
     var history = react_router_dom_1.useHistory();
-    var _a = react_1.useState(''), username = _a[0], setUsername = _a[1];
-    var _b = react_1.useState(''), email = _b[0], setEmail = _b[1];
-    var _c = react_1.useState(''), password = _c[0], setPassword = _c[1];
+    var _a = react_1.useState(null), error = _a[0], setError = _a[1];
+    var _b = react_1.useState(null), errorEmail = _b[0], setErrorEmail = _b[1];
+    var _c = react_1.useState(null), errorPassword = _c[0], setErrorPassword = _c[1];
+    var _d = react_1.useState(''), username = _d[0], setUsername = _d[1];
+    var _e = react_1.useState(''), email = _e[0], setEmail = _e[1];
+    var _f = react_1.useState(''), password = _f[0], setPassword = _f[1];
     var handleUser = function (event) {
         setUsername(event.target.value);
     };
@@ -35126,8 +35142,18 @@ function RegistrationForm(props) {
         setPassword(target.value);
     };
     var register = function () {
-        props.registerUser({ userName: username, email: email, password: password, registered: true });
-        history.push('/spain-on-react/');
+        var errorMessage = exports.validateUserName(username);
+        var errorEmailMessage = exports.validateUserEmail(email);
+        var errorPasswordMessage = exports.validateUserPassword(password);
+        if (errorMessage !== null || errorEmailMessage !== null || errorPasswordMessage !== null) {
+            setError(errorMessage);
+            setErrorEmail(errorEmailMessage);
+            setErrorPassword(errorPasswordMessage);
+        }
+        else {
+            props.registerUser({ userName: username, email: email, password: password, registered: true });
+            history.push('/spain-on-react/');
+        }
     };
     return (react_1.default.createElement("div", { className: 'form' },
         react_1.default.createElement("div", { className: 'titleForm' },
@@ -35136,10 +35162,13 @@ function RegistrationForm(props) {
             " "),
         react_1.default.createElement("div", { className: 'text' },
             react_1.default.createElement("p", { className: "text" }, "Input Username"),
+            react_1.default.createElement("p", null, error),
             react_1.default.createElement("input", { type: "text", name: "username", placeholder: "Input Username here", value: username, onChange: handleUser, className: 'inputForm' }),
             react_1.default.createElement("p", { className: "text" }, "Input email"),
+            react_1.default.createElement("p", null, errorEmail),
             react_1.default.createElement("input", { type: "text", name: "email", placeholder: "Input email here", value: email, onChange: handleEmail, className: 'inputForm' }),
             react_1.default.createElement("p", { className: "text" }, "Input password"),
+            react_1.default.createElement("p", null, errorPassword),
             react_1.default.createElement("input", { type: "password", name: "password", placeholder: "Input password here", value: password, onChange: handlePassword, className: 'inputForm' }),
             react_1.default.createElement("div", { className: "submit" },
                 react_1.default.createElement("div", { className: "text", onClick: register }, "Create account")))));
