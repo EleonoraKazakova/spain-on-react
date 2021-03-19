@@ -7,8 +7,23 @@ type RegistrationFormProps = {
   registerUser: (user: User) => void  //void: setUser() return nothing
 }
 
+
+export const validateUserName = (username: string): null | string =>
+  username.length > 0 ? null : 'You should enter Username'
+
+export const validateUserEmail = (email: string): null | string =>
+  /\S+@\S+\.\S+/.test(email)  ? null : 'You should enter valid email'
+
+export const validateUserPassword = (password: string): null | string =>
+  password.length > 5 ? null : 'Your password should have 6 or more symbols'
+
+
 export default function RegistrationForm(props: RegistrationFormProps) {
   const history = useHistory()
+
+  const [error, setError] = useState<null | string>(null)
+  const [errorEmail, setErrorEmail] = useState<null | string>(null)
+  const [errorPassword, setErrorPassword] = useState<null | string>(null)
 
   const [username, setUsername] = useState<string>('')
   const [email, setEmail] = useState<string>('')
@@ -27,8 +42,17 @@ export default function RegistrationForm(props: RegistrationFormProps) {
   }
   
   const register = () => {
-    props.registerUser({ userName: username, email, password, registered: true })
-    history.push('/spain-on-react/')
+    const errorMessage = validateUserName(username)
+    const errorEmailMessage = validateUserEmail(email)
+    const errorPasswordMessage = validateUserPassword(password)
+    if (errorMessage !== null || errorEmailMessage !== null || errorPasswordMessage !== null) {
+      setError(errorMessage)
+      setErrorEmail(errorEmailMessage)
+      setErrorPassword(errorPasswordMessage)
+    } else {
+      props.registerUser({ userName: username, email, password, registered: true })
+      history.push('/spain-on-react/')
+    }
   }
 
   return (
@@ -38,6 +62,7 @@ export default function RegistrationForm(props: RegistrationFormProps) {
         <p className="text">
           Input Username
         </p>
+        <p>{error}</p>
         <input
           type="text"
           name="username"
@@ -50,6 +75,7 @@ export default function RegistrationForm(props: RegistrationFormProps) {
         <p className="text">
           Input email
         </p>
+        <p>{errorEmail}</p>
         <input
           type="text"
           name="email"
@@ -61,7 +87,8 @@ export default function RegistrationForm(props: RegistrationFormProps) {
 
         <p className="text">
           Input password
-      </p>
+        </p>
+        <p>{errorPassword}</p>
         <input
           type="password"
           name="password"
