@@ -1,32 +1,37 @@
-import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import React, { useState } from "react"
+import { Link, useHistory } from "react-router-dom"
 import '../styles/app.scss'
 import Menu from './menu'
 import PhotoBlock from './photoblock'
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import HomePage from "./homepage";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import HomePage from "./homepage"
 import RegistrationForm from './registrationForm'
 import LogInForm from './logInForm'
-import Textarea from "./textarea";
+import Textarea from "./textarea"
 import linkedin from "../photos/linkedin.png"
 import {User} from './types'
+import UsersList from './usersList'
+import UserPage from "./userPage"
+import users from './users'
 
 
 function App() {
-  const unRegistredUser = {userName: '', registered: false, email: '', password: ''}
+  const unRegistredUser = {userName: '', registered: false, email: '', password: '', id: ''}
   const [user, setUser] = useState<User>(unRegistredUser) //currentUser
   const history = useHistory()
-  const [registeredUsers, setRegisteredUsers] = useState<User[]>([])
+  const [registeredUsers, setRegisteredUsers] = useState<User[]>(users)
 
   const registerUser = (newUser: User) => {
     setUser(newUser)
-    setRegisteredUsers([...registeredUsers, newUser] )
+    setRegisteredUsers([...registeredUsers, newUser])
   }
 
   const logOut = () => {
     setUser(unRegistredUser)
     history.push('/spain-on-react/')
   }
+
+  
   
   return (
     <Router>
@@ -77,6 +82,16 @@ function App() {
             <Route path='/spain-on-react/signin'>
               <RegistrationForm registerUser={registerUser} /> {/*send to Form setUser; registerUser is property of FormProps in Form*/}
             </Route>
+            
+            <Route path='/spain-on-react/users/:id'>
+              <UserPage registeredUsers={registeredUsers} />
+            </Route>
+
+            <Route path='/spain-on-react/users'>
+              <UsersList registeredUsers={registeredUsers} />
+            </Route>
+
+            
 
           </Switch>
 

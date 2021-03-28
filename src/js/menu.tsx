@@ -20,7 +20,8 @@ export default function Menu(){
         <MenuItem name='Item 1' links={{'1.1 Photo-Block': homePage + '/photoblock', '1.2 Add text': homePage + '/addtext'}}/>
         <MenuItem name='Item 2' links={{'2.1': homePage + '/', '2.2': homePage + '/', '2.3': homePage + '/'}}/>
         
-        <div className='MenuItem-title'><Link to='/spain-on-react/'>Homepage</Link></div>
+        <div className='MenuItem-title'><Link to={homePage + '/users'} >Users</Link></div>
+        <div className='MenuItem-title'><Link to={homePage}>Homepage</Link></div>
         <div className='submitClose' onClick={toggleMenu}> Close </div>
 
         </div> 

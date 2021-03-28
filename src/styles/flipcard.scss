@@ -1,7 +1,9 @@
+@use 'colors';
+
 .flip-card {
     height: 320px;
     width: 400px;
-    border-color: rgb(15, 15, 15);
+    border-color: colors.$black;
   }
   
   .flip-card-inner {
@@ -20,7 +22,7 @@
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: rgb(255, 254, 230);
+    background-color: colors.$light-yellow;
     padding: 20px 0px 20px 0px;
     margin: 50px 0px 50px 0px;
   }
@@ -42,12 +44,12 @@
   }
   
   .flip-card-front {
-    background-color: #2980b9;
-    color: white;
+    background-color: colors.$blue;
+    color: colors.$base-color;
   }
   
   .flip-card-back {
-    background-color: #2980b9;
-    color: white;
+    background-color: colors.$blue;
+    color: colors.$base-color;
     transform: rotateY(180deg);
   }

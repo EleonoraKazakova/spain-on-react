@@ -7,11 +7,17 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 //const WorkboxPlugin = require('workbox-webpack-plugin');
 
+const PUBLIC_PATH = process.env.PUBLIC_PATH || '/'
+
 module.exports = {
   entry: './src/js/index.tsx',
   output: {
     libraryTarget: 'var',
-    library: 'Client'
+    library: 'Client',
+    publicPath: PUBLIC_PATH
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   mode: 'development',
   devtool: 'source-map',

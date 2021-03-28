@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { v4 as uuidv4 } from 'uuid';
 import '../styles/styles.scss'
 import { User } from './types'
 
@@ -50,7 +51,7 @@ export default function RegistrationForm(props: RegistrationFormProps) {
       setErrorEmail(errorEmailMessage)
       setErrorPassword(errorPasswordMessage)
     } else {
-      props.registerUser({ userName: username, email, password, registered: true })
+      props.registerUser({ userName: username, email, password, registered: true, id: uuidv4() })
       history.push('/spain-on-react/')
     }
   }

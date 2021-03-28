@@ -2,7 +2,8 @@ export type User = {
   userName: string,
   registered: boolean,
   email: string,
-  password: string
+  password: string,
+  id: string
 }
 
 
