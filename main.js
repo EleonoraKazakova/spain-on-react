@@ -1660,6 +1660,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/styles/userlist.scss":
+/*!**********************************!*\
+  !*** ./src/styles/userlist.scss ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./node_modules/object-assign/index.js":
 /*!*********************************************!*\
   !*** ./node_modules/object-assign/index.js ***!
@@ -34683,11 +34696,13 @@ var logInForm_1 = __importDefault(__webpack_require__(/*! ./logInForm */ "./src/
 var textarea_1 = __importDefault(__webpack_require__(/*! ./textarea */ "./src/js/textarea.tsx"));
 var linkedin_png_1 = __importDefault(__webpack_require__(/*! ../photos/linkedin.png */ "./src/photos/linkedin.png"));
 var usersList_1 = __importDefault(__webpack_require__(/*! ./usersList */ "./src/js/usersList.tsx"));
+var userPage_1 = __importDefault(__webpack_require__(/*! ./userPage */ "./src/js/userPage.tsx"));
+var users_1 = __importDefault(__webpack_require__(/*! ./users */ "./src/js/users.ts"));
 function App() {
     var unRegistredUser = { userName: '', registered: false, email: '', password: '', id: '' };
     var _a = react_1.useState(unRegistredUser), user = _a[0], setUser = _a[1]; //currentUser
     var history = react_router_dom_1.useHistory();
-    var _b = react_1.useState([]), registeredUsers = _b[0], setRegisteredUsers = _b[1];
+    var _b = react_1.useState(users_1.default), registeredUsers = _b[0], setRegisteredUsers = _b[1];
     var registerUser = function (newUser) {
         setUser(newUser);
         setRegisteredUsers(__spreadArrays(registeredUsers, [newUser]));
@@ -34725,6 +34740,8 @@ function App() {
                     react_1.default.createElement(react_router_dom_2.Route, { path: '/spain-on-react/signin' },
                         react_1.default.createElement(registrationForm_1.default, { registerUser: registerUser }),
                         " "),
+                    react_1.default.createElement(react_router_dom_2.Route, { path: '/spain-on-react/users/:id' },
+                        react_1.default.createElement(userPage_1.default, { registeredUsers: registeredUsers })),
                     react_1.default.createElement(react_router_dom_2.Route, { path: '/spain-on-react/users' },
                         react_1.default.createElement(usersList_1.default, { registeredUsers: registeredUsers })))),
             react_1.default.createElement("div", { className: 'footer' },
@@ -34949,7 +34966,9 @@ function Menu() {
                 react_1.default.createElement(menuitem_1.default, { name: 'Item 1', links: { '1.1 Photo-Block': homePage + '/photoblock', '1.2 Add text': homePage + '/addtext' } }),
                 react_1.default.createElement(menuitem_1.default, { name: 'Item 2', links: { '2.1': homePage + '/', '2.2': homePage + '/', '2.3': homePage + '/' } }),
                 react_1.default.createElement("div", { className: 'MenuItem-title' },
-                    react_1.default.createElement(react_router_dom_1.Link, { to: '/spain-on-react/' }, "Homepage")),
+                    react_1.default.createElement(react_router_dom_1.Link, { to: homePage + '/users' }, "Users")),
+                react_1.default.createElement("div", { className: 'MenuItem-title' },
+                    react_1.default.createElement(react_router_dom_1.Link, { to: homePage }, "Homepage")),
                 react_1.default.createElement("div", { className: 'submitClose', onClick: toggleMenu }, " Close "))) : null,
         react_1.default.createElement("div", { className: 'blockSubmit', onClick: toggleMenu }, "Menu")));
 }
@@ -35303,10 +35322,10 @@ exports.default = Textarea;
 
 /***/ }),
 
-/***/ "./src/js/usersList.tsx":
-/*!******************************!*\
-  !*** ./src/js/usersList.tsx ***!
-  \******************************/
+/***/ "./src/js/userPage.tsx":
+/*!*****************************!*\
+  !*** ./src/js/userPage.tsx ***!
+  \*****************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
@@ -35316,15 +35335,152 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 __webpack_require__(/*! ../styles/styles.scss */ "./src/styles/styles.scss");
-function UsersList(props) {
+function UserPage(props) {
+    var id = react_router_dom_1.useParams().id;
+    var user = props.registeredUsers.find(function (user) { return user.id === id; });
     return (react_1.default.createElement("div", null,
-        react_1.default.createElement("p", null, props.registeredUsers.map(function (user) { return react_1.default.createElement("div", null,
-            " ",
-            react_1.default.createElement("p", null, user.userName),
-            " ",
-            react_1.default.createElement("p", null, user.id),
-            " "); }))));
+        " ",
+        user
+            ? react_1.default.createElement(react_1.default.Fragment, null,
+                " ",
+                react_1.default.createElement("p", null, user.userName),
+                " ",
+                react_1.default.createElement("p", null, user.email),
+                " ")
+            : 'User not found'));
+}
+exports.default = UserPage;
+
+
+/***/ }),
+
+/***/ "./src/js/users.ts":
+/*!*************************!*\
+  !*** ./src/js/users.ts ***!
+  \*************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.default = [
+    {
+        userName: 'Eleonora',
+        registered: true,
+        email: 'eleonora@gmail.com',
+        password: '123456',
+        id: 'bcf1dd20-778c-4503-83be-0aa35465ffce'
+    },
+    {
+        userName: 'Andrei',
+        registered: true,
+        email: 'Andrei@gmail.com',
+        password: '123456',
+        id: '8d8bcdbb-3a08-4a62-8056-00dbfdfb187c'
+    },
+    {
+        userName: 'Gamlet',
+        registered: true,
+        email: 'Gamlet@gmail.com',
+        password: '123456',
+        id: 'b85be9ce-7861-4d6f-9030-fbaa64e36619'
+    },
+    {
+        userName: 'Tom',
+        registered: true,
+        email: 'tom@gmail.com',
+        password: '123456',
+        id: '3b429124-47c0-48f1-b220-dd9c1ea1205f'
+    },
+    {
+        userName: 'Elena',
+        registered: true,
+        email: 'elena@gmail.com',
+        password: '123456',
+        id: '7b9335e6-e1b3-4a6f-82d1-cbac5d0ad073'
+    },
+    {
+        userName: 'Julia',
+        registered: true,
+        email: 'julia@gmail.com',
+        password: '123456',
+        id: '6847e5d4-cb31-481d-8f47-c92e1d300f10'
+    },
+    {
+        userName: 'Eva',
+        registered: true,
+        email: 'eva@gmail.com',
+        password: '123456',
+        id: 'b3fcf2e4-6c91-49d1-a9ce-99046af79af2'
+    }
+];
+
+
+/***/ }),
+
+/***/ "./src/js/usersList.tsx":
+/*!******************************!*\
+  !*** ./src/js/usersList.tsx ***!
+  \******************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __spreadArrays = (this && this.__spreadArrays) || function () {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+__webpack_require__(/*! ../styles/styles.scss */ "./src/styles/styles.scss");
+__webpack_require__(/*! ../styles/userlist.scss */ "./src/styles/userlist.scss");
+var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+function UsersList(props) {
+    var _a = react_1.useState(true), sortDirection = _a[0], setSortDirection = _a[1];
+    return (react_1.default.createElement("div", { className: 'UserList-table' },
+        react_1.default.createElement("h4", { onClick: function () { return setSortDirection(!sortDirection); } },
+            "Name ",
+            sortDirection ? '↓' : '↑'),
+        __spreadArrays(props.registeredUsers).sort(function (a, b) {
+            if (a.userName < b.userName) {
+                return sortDirection ? -1 : 1;
+            }
+            else if (a.userName > b.userName) {
+                return sortDirection ? 1 : -1;
+            }
+            else {
+                return 0;
+            }
+        })
+            .map(function (user) { return (react_1.default.createElement("div", { className: 'UserList-name' },
+            react_1.default.createElement(react_router_dom_1.Link, { to: "/spain-on-react/users/" + user.id },
+                " ",
+                user.userName,
+                " "))); })));
 }
 exports.default = UsersList;
 
